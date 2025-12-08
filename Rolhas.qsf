@@ -1,0 +1,117 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2025  Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Altera and sold by Altera or its authorized distributors.  Please
+# refer to the Altera Software License Subscription Agreements 
+# on the Quartus Prime software download page.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+# Date created = 15:25:26  November 24, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Rolhas_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY mainProject
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:25:26  NOVEMBER 24, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE Reg8bits.v
+set_global_assignment -name VERILOG_FILE DFlipFlopNeg.v
+set_global_assignment -name VERILOG_FILE mux1_8bits.v
+set_global_assignment -name VERILOG_FILE SomadorCompleto.v
+set_global_assignment -name VERILOG_FILE Somador8bits.v
+set_global_assignment -name VERILOG_FILE SubtratorCompleto.v
+set_global_assignment -name VERILOG_FILE Subtrator8bitsDiv.v
+set_global_assignment -name VERILOG_FILE parteDiv.v
+set_global_assignment -name VERILOG_FILE mux1.v
+set_global_assignment -name VERILOG_FILE main.v
+set_global_assignment -name VERILOG_FILE JK_FlipFlop_Preset_Clear.v
+set_global_assignment -name VERILOG_FILE DivBCD.v
+set_global_assignment -name VERILOG_FILE decodificador7seg.v
+set_global_assignment -name VERILOG_FILE ContadorDeCargaParalela.v
+set_global_assignment -name VERILOG_FILE BinaryToBCD.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VERILOG_FILE ContadorDecrescente.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VERILOG_FILE debouncer.v
+set_global_assignment -name VERILOG_FILE debouncerNeg.v
+set_global_assignment -name VERILOG_FILE divisorFreq.v
+set_location_assignment PIN_C10 -to adicionar
+set_location_assignment PIN_C14 -to S0[0]
+set_location_assignment PIN_E15 -to S0[1]
+set_location_assignment PIN_C15 -to S0[2]
+set_location_assignment PIN_C16 -to S0[3]
+set_location_assignment PIN_E16 -to S0[4]
+set_location_assignment PIN_D17 -to S0[5]
+set_location_assignment PIN_C17 -to S0[6]
+set_location_assignment PIN_C18 -to S1[0]
+set_location_assignment PIN_D18 -to S1[1]
+set_location_assignment PIN_E18 -to S1[2]
+set_location_assignment PIN_B16 -to S1[3]
+set_location_assignment PIN_A17 -to S1[4]
+set_location_assignment PIN_A18 -to S1[5]
+set_location_assignment PIN_B17 -to S1[6]
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
+set_global_assignment -name VERILOG_FILE mainContadorDuzias.v
+set_global_assignment -name VERILOG_FILE contadorTela.v
+set_global_assignment -name VERILOG_FILE contadorDuzia.v
+set_global_assignment -name VERILOG_FILE MEFenchimento.v
+set_global_assignment -name VERILOG_FILE Start_Stop.v
+set_global_assignment -name VERILOG_FILE CQ.v
+set_global_assignment -name VERILOG_FILE mainProject.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_N5 -to CLK
+set_location_assignment PIN_A7 -to reset
+set_location_assignment PIN_B8 -to but
+set_location_assignment PIN_A8 -to motor
+set_location_assignment PIN_A9 -to valvula
+set_location_assignment PIN_A10 -to alarmeGarrafa
+set_location_assignment PIN_B11 -to descartado
+set_location_assignment PIN_A11 -to posicao
+set_location_assignment PIN_D14 -to alarme
+set_location_assignment PIN_F15 -to aprovado
+set_location_assignment PIN_B14 -to reprovado
+set_location_assignment PIN_C11 -to cheia
+set_location_assignment PIN_D12 -to garrafa
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform1.vwf
+set_global_assignment -name VERILOG_FILE edge_detector.v
+set_location_assignment PIN_C13 -to TemGLevel
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

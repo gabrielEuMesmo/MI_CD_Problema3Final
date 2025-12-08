@@ -1,0 +1,20 @@
+module contadorDuzia(E, Ck, S, Q);
+
+	input E, Ck;
+	output S;
+	
+	output [3:0]Q;
+	wire clear;
+	
+	JK_FlipFlop_Preset_Clear(1b'1, 1b'1, Ck, 1b'1,clear, Q[0], );
+	
+	JK_FlipFlop_Preset_Clear(Q[0], Q[0], Ck, 1b'1,clear, Q[1], );
+	
+	JK_FlipFlop_Preset_Clear(Q[1], Q[1], Ck, 1b'1,clear, Q[2], );
+	
+	JK_FlipFlop_Preset_Clear(Q[2], Q[2], Ck, 1b'1,clear, Q[3], );
+	
+	and(S, Q[3], ~Q[2], Q[1]);
+	
+	not(clear, S);
+endmodule
