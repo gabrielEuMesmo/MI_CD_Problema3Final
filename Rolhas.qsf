@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY mainProject
+set_global_assignment -name TOP_LEVEL_ENTITY contadorTela
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:25:26  NOVEMBER 24, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -95,9 +95,6 @@ set_global_assignment -name VERILOG_FILE MEFenchimento.v
 set_global_assignment -name VERILOG_FILE Start_Stop.v
 set_global_assignment -name VERILOG_FILE CQ.v
 set_global_assignment -name VERILOG_FILE mainProject.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_N5 -to CLK
 set_location_assignment PIN_A7 -to reset
 set_location_assignment PIN_B8 -to but
@@ -114,4 +111,24 @@ set_location_assignment PIN_D12 -to garrafa
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform1.vwf
 set_global_assignment -name VERILOG_FILE edge_detector.v
 set_location_assignment PIN_C13 -to TemGLevel
+set_location_assignment PIN_B10 -to posicaoslowDeb
+set_location_assignment PIN_B20 -to S2[0]
+set_location_assignment PIN_A20 -to S2[1]
+set_location_assignment PIN_B19 -to S2[2]
+set_location_assignment PIN_A21 -to S2[3]
+set_location_assignment PIN_B21 -to S2[4]
+set_location_assignment PIN_C22 -to S2[5]
+set_location_assignment PIN_B22 -to S2[6]
+set_location_assignment PIN_F21 -to S3[0]
+set_location_assignment PIN_E22 -to S3[1]
+set_location_assignment PIN_E21 -to S3[2]
+set_location_assignment PIN_C19 -to S3[3]
+set_location_assignment PIN_C20 -to S3[4]
+set_location_assignment PIN_D19 -to S3[5]
+set_location_assignment PIN_E17 -to S3[6]
+set_location_assignment PIN_P11 -to CLK1
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

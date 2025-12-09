@@ -9,23 +9,25 @@ module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 	wire [3:0]BCD0, BCD1;
 	wire [6:0]Q;
 	
+	debouncer(Tampar, CK, TamparDeb);
+	
+	edge_detector (CK, , TamparDeb, TamparDebSlow);
+	
 	wire PLoad, save, CLK;
 	or(TemR, Q[0], Q[1], Q[2], Q[3], Q[4], Q[5], Q[6]);
 	ContadorDecrescente(adicionarFinal, ~ini, S,  );
 	
-	debouncer(adicionar, CK, adicionarDeb);
-	
-	ContadorDeCargaParalela( Z[6:0], Q, ~PLoad, Tampar);
+	ContadorDeCargaParalela( Z[6:0], Q, ~PLoad, TamparDebSlow);
 	
 	Reg8bits(Qbuff, ~CLK, Q, );
 	
 	and(Tem5, ~Qbuff[6], ~Qbuff[5],  ~Qbuff[4],  ~Qbuff[3], Qbuff[2], ~Qbuff[1], Qbuff[0], CLK); 
 	
-	or(save, Tem5, adicionarDeb);
+	or(save, Tem5, adicionar);
 	
 	and(adicionarFinal, save, S);
 	
-	or(CLK, adicionarDeb, Tampar);
+	or(CLK, adicionar, Tampar);
 	
 	or(PLoad, ini, adicionarFinal);
 	
