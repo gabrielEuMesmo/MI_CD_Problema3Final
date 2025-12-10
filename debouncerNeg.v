@@ -1,6 +1,6 @@
 module debouncerNeg(entrada, CK, saida);
 
-	// Deboucer com FlipFlop em cascata;
+	// Deboucer com FlipFlop em cascata e saida negada;
 
 	input CK, entrada;
 	
