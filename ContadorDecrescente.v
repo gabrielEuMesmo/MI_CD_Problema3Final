@@ -1,5 +1,7 @@
 module ContadorDecrescente(CLK, Reset, S, Q);
 
+	//Contador Decrescente com inicio em 15;
+
 	input CLK, Reset;
 	output S;
 	
@@ -23,4 +25,5 @@ module ContadorDecrescente(CLK, Reset, S, Q);
 	
 	JK_FlipFlop_Preset_Clear (FF4, FF4, CLK, ~Reset, 1'b1, Q[3], );
 	
+
 endmodule
