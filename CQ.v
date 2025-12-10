@@ -2,7 +2,7 @@ module CQ(Pronto, Aprovado, Reprovado, CLK, Conta, Descarte, Posicao);
 
 	input Pronto, Aprovado, Reprovado, CLK;
 	output Conta, Descarte, Posicao;
-	
+	//MEF de mealy responsavel pelo controle de qualidade.
 	wire Q0;
 
 	DFlipFlop(Q0f, CLK, Q0, );
