@@ -1,5 +1,6 @@
 module Start_Stop(But, TemG, CLK, Start, AlarmeGarrafa, reset);
 
+	// MEF de Moore responsavel pelo inicio do circuito.
 	input But, TemG, CLK, reset;
 	output Start, AlarmeGarrafa;
 	
