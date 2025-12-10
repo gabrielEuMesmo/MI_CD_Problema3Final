@@ -23,6 +23,6 @@ module contadorDuzia(Ck, clear, S);
 	and(K2part, Q[1], Q[0]);
 	or(K2, Q[3], K2part);
 	
-	and(S, Q[3], Q[2]);
+	and(S, Q[3], Q[2], ~Q[1], ~Q[0]);
 	
 endmodule

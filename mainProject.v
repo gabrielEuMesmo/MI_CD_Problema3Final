@@ -3,14 +3,9 @@ module mainProject(adicionar, aprovado, reprovado, cheia, garrafa, reset, but, C
 	input adicionar, aprovado, reprovado, cheia, garrafa, reset, but, CLK, CLK1;
 	output descartado, posicao, alarme, alarmeGarrafa, valvula, motor, TemGLevel;
 	output [6:0] S0, S1, S2, S3;
-	
-	JK_FlipFlop_Preset_Clear (1'b1, 1'b1,TemGDeb, 1'b1, 1'b1, TemGLevel, );
+	//
 	
 	edge_detector(CLK, ,butDeb, PulseBut); 
-	
-	debouncer(garrafa, CLK, TemGDeb);
-	
-	debouncer(cheia, CLK, cheiaDeb);
 	
 	debouncer(adicionar, CLK, adicionarDeb);
 	
@@ -18,7 +13,7 @@ module mainProject(adicionar, aprovado, reprovado, cheia, garrafa, reset, but, C
 	
 	debouncer(aprovado, CLK, aprovadoDeb);
 
-	debouncerNeg(conta, CLK1, contaDeb);
+	
 	debouncerNeg(but, CLK, butDeb);
 	
 	debouncerNeg(reset, CLK, resetDeb);
@@ -33,7 +28,7 @@ module mainProject(adicionar, aprovado, reprovado, cheia, garrafa, reset, but, C
 	
 	MEFenchimento(CLK, TemR, Enable, garrafa, cheia, motor, pronto, valvula, alarme);
 	
-	CQ(pronto, aprovadoDeb, reprovadoDeb, CLK1, conta, descartado, posicao);
+	CQ(pronto, aprovadoDeb, reprovado, CLK1, conta, descartado, posicao);
 	
 endmodule
 	

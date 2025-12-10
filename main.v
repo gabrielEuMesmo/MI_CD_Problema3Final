@@ -1,8 +1,8 @@
-module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
+module main(ini, adicionar, S0, S1, Tampar, CLKplaca, TemR);
 
 	// Modulo responsavel pela contagem de rolhas.
 	wire [7:0]P, Z;
-	input ini, adicionar, Tampar, CK;
+	input ini, adicionar, Tampar, CLKplaca;
 	output [6:0] S0, S1;
 	output TemR;
 	
@@ -10,12 +10,14 @@ module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 	wire [3:0]BCD0, BCD1;
 	wire [6:0]Q;
 	
-	debouncer(Tampar, CK, TamparDeb);
+	debouncer(Tampar, CLKplaca, TamparDeb);
 	
-	edge_detector (CK, , TamparDeb, TamparDebSlow);
+	edge_detector (CLKplaca, , TamparDeb, TamparDebSlow);
 	
 	wire PLoad, save, CLK;
+	
 	or(TemR, Q[0], Q[1], Q[2], Q[3], Q[4], Q[5], Q[6]);
+	
 	ContadorDecrescente(adicionarFinal, ~ini, S,  );
 	
 	ContadorDeCargaParalela( Z[6:0], Q, ~PLoad, TamparDebSlow);
@@ -28,7 +30,7 @@ module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 	
 	and(adicionarFinal, save, S);// Verifica se tem rolhas no dispensador.
 	
-	or(CLK, adicionar, Tampar);//Amarra o funcionamento do circuito as ações de tampar ou adicionar rolhas.
+	or(CLK, adicionar, TamparDeb);//Amarra o funcionamento do circuito as ações de tampar ou adicionar rolhas.
 	
 	or(PLoad, ini, adicionarFinal);
 	
