@@ -1,5 +1,6 @@
 module contadorDuzia(Ck, clear, S);
 
+	// Contador De 0 a 12, Saida quando 12
 	input Ck, clear;
 	output S;
 	
