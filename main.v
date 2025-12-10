@@ -1,5 +1,6 @@
 module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 
+	// Modulo responsavel pela contagem de rolhas.
 	wire [7:0]P, Z;
 	input ini, adicionar, Tampar, CK;
 	output [6:0] S0, S1;
@@ -21,13 +22,13 @@ module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 	
 	Reg8bits(Qbuff, ~CLK, Q, );
 	
-	and(Tem5, ~Qbuff[6], ~Qbuff[5],  ~Qbuff[4],  ~Qbuff[3], Qbuff[2], ~Qbuff[1], Qbuff[0], CLK); 
+	and(Tem5, ~Qbuff[6], ~Qbuff[5],  ~Qbuff[4],  ~Qbuff[3], Qbuff[2], ~Qbuff[1], Qbuff[0], CLK); // Verifica se tem 5 rolhas.
 	
-	or(save, Tem5, adicionar);
+	or(save, Tem5, adicionar); //Verifica as condições para adicionar rolhas.
 	
-	and(adicionarFinal, save, S);
+	and(adicionarFinal, save, S);// Verifica se tem rolhas no dispensador.
 	
-	or(CLK, adicionar, Tampar);
+	or(CLK, adicionar, Tampar);//Amarra o funcionamento do circuito as ações de tampar ou adicionar rolhas.
 	
 	or(PLoad, ini, adicionarFinal);
 	
@@ -41,4 +42,5 @@ module main(ini, adicionar, S0, S1, Tampar, CK, TemR);
 
 	decodificador7seg(BCD1, S1);
 	
+
 endmodule
