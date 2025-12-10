@@ -4,6 +4,8 @@ module edge_detector (
     input signal_in,
     output pulse_out
 );
+
+    //MEF Level to Pulse;
     reg sig_d;
     always @(posedge clk or posedge reset) begin
         if (reset)
