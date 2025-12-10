@@ -30,7 +30,7 @@ module main(ini, adicionar, S0, S1, Tampar, CLKplaca, TemR);
 	
 	and(adicionarFinal, save, S);// Verifica se tem rolhas no dispensador.
 	
-	or(CLK, adicionar, TamparDeb);//Amarra o funcionamento do circuito as ações de tampar ou adicionar rolhas.
+	or(CLK, adicionar, TamparDebSlow);//Amarra o funcionamento do circuito as ações de tampar ou adicionar rolhas.
 	
 	or(PLoad, ini, adicionarFinal);
 	
@@ -46,4 +46,5 @@ module main(ini, adicionar, S0, S1, Tampar, CLKplaca, TemR);
 	
 
 endmodule
+
 
