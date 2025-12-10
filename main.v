@@ -18,7 +18,7 @@ module main(ini, adicionar, S0, S1, Tampar, CLKplaca, TemR);
 	
 	or(TemR, Q[0], Q[1], Q[2], Q[3], Q[4], Q[5], Q[6]);
 	
-	ContadorDecrescente(adicionarFinal, ~ini, S,  );
+	ContadorDecrescente(adicionarFinal, ini, S,  );
 	
 	ContadorDeCargaParalela( Z[6:0], Q, ~PLoad, TamparDebSlow);
 	
@@ -46,3 +46,4 @@ module main(ini, adicionar, S0, S1, Tampar, CLKplaca, TemR);
 	
 
 endmodule
+
