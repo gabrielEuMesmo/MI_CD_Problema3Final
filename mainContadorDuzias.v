@@ -1,5 +1,6 @@
 module mainContadorDuzias(Ck, clear, S0, S1);
 
+	//Modulo para mostrar o contador de duzias.
 	input Ck, clear;
 	output [6:0] S0, S1;
 	
