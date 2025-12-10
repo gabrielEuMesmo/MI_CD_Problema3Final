@@ -1,5 +1,7 @@
 module ContadorDeCargaParalela( P, Q, PLoad, CLK);
 
+	// Contador de Carga paralela para o contador de rolhas.
+
 	input PLoad, CLK;
 	input [6:0] P;
 	output [6:0]Q;
@@ -49,3 +51,4 @@ module ContadorDeCargaParalela( P, Q, PLoad, CLK);
 	JK_FlipFlop_Preset_Clear (FF7, FF7, CLK, preset[6], clear[6], Q[6], );
 
 endmodule
+
