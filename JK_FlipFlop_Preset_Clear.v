@@ -8,7 +8,7 @@ module JK_FlipFlop_Preset_Clear (
     output Qbar
 );
 
-    
+    //Flip Flop JK com preset e clear.
     not(Qbar, Q);
 
     always @(posedge clk or negedge preset or negedge clear) begin
@@ -25,5 +25,6 @@ module JK_FlipFlop_Preset_Clear (
             endcase
         end
     end
+
 
 endmodule
