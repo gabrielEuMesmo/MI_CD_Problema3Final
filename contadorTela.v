@@ -1,5 +1,6 @@
 module contadorTela(Ck, clear, Q);
 
+	// Contador de 0 a 10.
 	input Ck, clear;
 	
 	output [3:0]Q;
