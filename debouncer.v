@@ -1,6 +1,6 @@
 module debouncer(entrada, CK, saida);
 
-	// Deboucer com FlipFlop em cascata;
+	// Deboucer com FlipFlop em cascata e clock lento;
 
 	input CK, entrada;
 	
